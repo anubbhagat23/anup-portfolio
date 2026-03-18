@@ -1,0 +1,88 @@
+// global.scss
+// Theme and reusable styles for the portfolio
+
+:root {
+  --primary-gradient: linear-gradient(120deg, #e3f0ff 0%, #f8faff 100%);
+  --primary-color: #4f8cff;
+  --secondary-color: #6ee7b7;
+  --text-color: #213547;
+  --background-color: #f3f4f6;
+  --card-radius: 18px;
+  --card-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  --transition: 0.2s cubic-bezier(.68,-0.55,.27,1.55);
+  
+}
+
+#root {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.card {
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  background: #fff;
+  padding: 2rem 1rem;
+}
+
+.btn {
+  background: var(--primary-gradient);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+.btn:hover {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.bg-gradient {
+  background: var(--primary-gradient);
+}
+
+// Utility classes
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Responsive
+@media (max-width: 600px) {
+  .card {
+    padding: 1rem 0.5rem;
+  }
+}
+
+$primary-gradient: linear-gradient(120deg, #e3f0ff 0%, #f8faff 100%);
+$box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+$box-shadow-hover: 0 8px 32px rgba(0,0,0,0.18);
+$primary-border-color: #800080;
+$primary-title-color: #000000;
+$section-radius: 12px;
+$section-padding: 2rem 0;
+$font-title-size: 3rem;
+$font-subtitle-size: 2rem;
+$font-desc-size: 1.2rem;

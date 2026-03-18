@@ -1,0 +1,52 @@
+.infinite-container {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 16px;
+  padding: 1rem;
+  background: #ffffff;
+  height: 420px;
+  overflow: auto;
+  font-family: 'Space Grotesk', 'Trebuchet MS', 'Segoe UI', sans-serif;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.1);
+}
+
+.infinite-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.infinite-item {
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 12px;
+  background: #f8fafc;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.infinite-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.12);
+}
+
+.infinite-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.infinite-body {
+  font-size: 0.85rem;
+  color: #475569;
+  margin-top: 0.4rem;
+}
+
+.infinite-sentinel {
+  height: 1px;
+}
+
+.infinite-status {
+  padding: 0.75rem;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.8rem;
+}

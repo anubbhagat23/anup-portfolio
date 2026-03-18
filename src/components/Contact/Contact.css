@@ -1,0 +1,186 @@
+:root {
+  --contact-ink: #101827;
+  --contact-muted: #475569;
+  --contact-accent: #f97316;
+  --contact-accent-2: #0ea5e9;
+  --contact-surface: #fffaf0;
+  --contact-card: rgba(255, 255, 255, 0.85);
+  --contact-border: rgba(15, 23, 42, 0.12);
+}
+
+.contact {
+  position: relative;
+  padding: 4.5rem 1.5rem 5rem;
+  background: radial-gradient(circle at top, #fff2d9 0%, #f6ebe2 45%, #efe3d6 100%);
+  overflow: hidden;
+}
+
+.contact::before,
+.contact::after {
+  content: '';
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(0px);
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.contact::before {
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(135deg, #fdba74, #fb7185);
+  top: -140px;
+  right: -60px;
+}
+
+.contact::after {
+  width: 220px;
+  height: 220px;
+  background: linear-gradient(135deg, #38bdf8, #22c55e);
+  bottom: -120px;
+  left: -60px;
+}
+
+.contact-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2.8rem 2.6rem;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(18px);
+  animation: contact-rise 0.8s ease-out;
+}
+
+.contact-header {
+  text-align: left;
+  margin-bottom: 2.4rem;
+}
+
+.contact-eyebrow {
+  font-family: 'Space Grotesk', 'Trebuchet MS', 'Segoe UI', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--contact-accent-2);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.contact-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: clamp(2rem, 2.8vw, 2.8rem);
+  color: var(--contact-ink);
+  margin-bottom: 0.8rem;
+}
+
+.contact-subtitle {
+  font-family: 'Space Grotesk', 'Trebuchet MS', 'Segoe UI', sans-serif;
+  color: var(--contact-muted);
+  font-size: 1.05rem;
+  max-width: 620px;
+  line-height: 1.7;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.contact-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1.4rem 1.5rem;
+  border-radius: 18px;
+  background: var(--contact-card);
+  border: 1px solid var(--contact-border);
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(249, 115, 22, 0.08), rgba(14, 165, 233, 0.08));
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+  border-color: rgba(249, 115, 22, 0.4);
+}
+
+.contact-card:hover::before {
+  opacity: 1;
+}
+
+.contact-card-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--contact-accent-2);
+  font-weight: 700;
+  z-index: 1;
+}
+
+.contact-card-value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--contact-ink);
+  z-index: 1;
+}
+
+.contact-card-action {
+  font-size: 0.95rem;
+  color: var(--contact-accent);
+  font-weight: 600;
+  z-index: 1;
+}
+
+.contact-footer {
+  font-family: 'Space Grotesk', 'Trebuchet MS', 'Segoe UI', sans-serif;
+  color: var(--contact-muted);
+  font-size: 0.95rem;
+}
+
+@keyframes contact-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .contact-shell {
+    padding: 2.2rem 1.6rem;
+  }
+  .contact-title {
+    font-size: 2rem;
+  }
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+  .contact-card {
+    padding: 1.2rem 1.3rem;
+  }
+  .contact-card-label {
+    letter-spacing: 0.15rem;
+  }
+}

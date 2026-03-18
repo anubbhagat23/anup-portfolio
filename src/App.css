@@ -1,0 +1,29 @@
+
+
+.portfolio-container {
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: #f3f4f6;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+section {
+  /* margin-bottom: 2rem; */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+@media (max-width: 600px) {
+  .portfolio-container {
+    padding: 0.5rem;
+  }
+  section {
+    margin-bottom: 1rem;
+    padding: 1rem 0.5rem;
+  }
+}
